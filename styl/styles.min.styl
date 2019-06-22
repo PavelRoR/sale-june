@@ -1,0 +1,128 @@
+@font-face {
+	font-family: 'Rubik';
+	src: url('../fonts/Rubik.eot');
+	src: url('../fonts/Rubik.eot') format('embedded-opentype'),
+		 url('../fonts/Rubik.woff2') format('woff2'),
+		 url('../fonts/Rubik.woff') format('woff'),
+		 url('../fonts/Rubik.ttf') format('truetype'),
+		 url('../fonts/Rubik.svg#Rubik') format('svg');
+}
+@font-face {
+	font-family: 'RubikBold';
+	src: url('../fonts/RubikBold.eot');
+	src: url('../fonts/RubikBold.eot') format('embedded-opentype'),
+		 url('../fonts/RubikBold.woff2') format('woff2'),
+		 url('../fonts/RubikBold.woff') format('woff'),
+		 url('../fonts/RubikBold.ttf') format('truetype'),
+		 url('../fonts/RubikBold.svg#RubikBold') format('svg');
+}
+@font-face {
+	font-family: 'RubikItalic';
+	src: url('../fonts/RubikItalic.eot');
+	src: url('../fonts/RubikItalic.eot') format('embedded-opentype'),
+		 url('../fonts/RubikItalic.woff2') format('woff2'),
+		 url('../fonts/RubikItalic.woff') format('woff'),
+		 url('../fonts/RubikItalic.ttf') format('truetype'),
+		 url('../fonts/RubikItalic.svg#RubikItalic') format('svg');
+}
+@font-face {
+	font-family: 'RubikLight';
+	src: url('../fonts/RubikLight.eot');
+	src: url('../fonts/RubikLight.eot') format('embedded-opentype'),
+		 url('../fonts/RubikLight.woff2') format('woff2'),
+		 url('../fonts/RubikLight.woff') format('woff'),
+		 url('../fonts/RubikLight.ttf') format('truetype'),
+		 url('../fonts/RubikLight.svg#RubikLight') format('svg');
+}
+@font-face {
+	font-family: 'RubikMedium';
+	src: url('../fonts/RubikMedium.eot');
+	src: url('../fonts/RubikMedium.eot') format('embedded-opentype'),
+		 url('../fonts/RubikMedium.woff2') format('woff2'),
+		 url('../fonts/RubikMedium.woff') format('woff'),
+		 url('../fonts/RubikMedium.ttf') format('truetype'),
+		 url('../fonts/RubikMedium.svg#RubikMedium') format('svg');
+}
+@font-face {
+	font-family: 'UbuntuBold';
+	src: url('../fonts/UbuntuBold.eot');
+	src: url('../fonts/UbuntuBold.eot') format('embedded-opentype'),
+		 url('../fonts/UbuntuBold.woff2') format('woff2'),
+		 url('../fonts/UbuntuBold.woff') format('woff'),
+		 url('../fonts/UbuntuBold.ttf') format('truetype'),
+		 url('../fonts/UbuntuBold.svg#UbuntuBold') format('svg');
+}
+@import '../css/_css/bootstrap.min.css'
+
+*
+	margin 0
+	padding 0
+	outline none
+body
+	font-size: 18px
+	font-family: 'Rubik',sans-serif
+	color #000
+	background-color #fff
+a
+	color: #fefefe
+	&:focus
+		outline: 0
+	&:hover
+		text-decoration none
+h1,h2,h3,h4,h5,h6
+	font-weight normal
+	margin 0
+button
+	border none
+section
+header
+footer
+	width 100%
+	display block
+.button
+	position relative
+	width 100%
+	max-width: 295px;
+	height: 61px;
+	line-height: 61px;
+	a
+		display inline-block
+		border-radius: 15px;
+		text-align: center
+		width 100%
+		height inherit
+		font-size: 20px;
+		background-color: #5A206C
+		background-image linear-gradient(-30deg, #653085 0%, #3d1c53 100%)
+		text-decoration: none
+		position relative
+		transition: all .3s ease
+		color #fff
+	&:before
+		content: ''
+		display block
+		position:  absolute
+		border-radius: 15px;
+		width: 281px;
+		height: 61px;
+		left 0
+		right 0
+		bottom: -3px
+		background-color: #000
+		margin 0 auto
+		z-index -1
+		&:hover
+			transform: translateY(-3)
+	&:focus
+		a
+			text-decoration: none
+			background-color: #5A206C
+			background-image linear-gradient(-30deg, #653085 0%, #3d1c53 100%)
+			color #fff
+	&:hover
+		a
+			text-decoration: none
+			background-color: #653085
+			background-image linear-gradient(-160deg, #653085 0%, #3d1c53 100%)
+			color #fff
+			transform: translateY(3px)
