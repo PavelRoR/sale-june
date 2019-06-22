@@ -1,0 +1,73 @@
+-var classes = ['course-1','course-2','course-3','course-4','course-5','course-6','course-7','course-8','course-9','course-10','course-11','course-12','course-13','course-14','course-15','course-16','course-17','course-18','course-19','course-20'];
+-var imgClasses = ['course-img-1','course-img-2','course-img-3','course-img-4','course-img-5','course-img-6','course-img-7','course-img-8','course-img-9','course-img-10','course-img-11','course-img-12','course-img-13','course-img-14','course-img-15','course-img-16','course-img-17','course-img-18','course-img-19','course-img-20'];
+-var modals = ['modal-1','modal-2','modal-3','modal-4','modal-5','modal-6','modal-7','modal-8','modal-9','modal-10','modal-11','modal-12','modal-13','modal-13','modal-14','modal-15','modal-16','modal-17','modal-18','modal-19'];
+-var links = ['','','','','','','','','','','','','','','','','','','',''];
+
+mixin course(cl, clImg,name, author, fullPrice, price, modal, link, giftPrice, giftName)
+	.col-md-4.col-sm-4
+		.course(class= cl)
+			.course-img(class= clImg)
+			.course-body
+				h4.course-name= name
+				if giftPrice && giftName
+					p.gift В подарок
+						span= giftPrice
+						| мини-курс 
+						= giftName
+				p.course-auhtor= author
+				p.price.full-price= fullPrice
+					| <span> руб.</span>
+				p.price.price-sale=price
+					| <span> руб.</span>
+			.price-footer
+				.button.button-more
+					button(data-modal= modal)  Подробнее
+				.button.button-link
+					a(href= link target="_blank") Купить
+
+section#courses
+	.container
+		h3.courses-title Лучшие курсы по шикарным ценам
+		.row
+			+course(classes[0],imgClasses[0],'Деньги и карма','Ольга Лихотина','10 000','4 440',modals[0],links[0])
+			+course(classes[1],imgClasses[1],'Портальные даты','Ольга Лихотина','10 000','4 450',modals[1],links[1])
+			+course(classes[2],imgClasses[2],'Таро как профессия','Светлана Корченко','10 000','6 840',modals[2],links[2])
+		.row
+			+course(classes[3],imgClasses[3],'Магия отношений, здоровья, денег','Ольга Веда','10 000р.','12 450 ',modals[3],links[3])
+			+course(classes[4],imgClasses[4],'Магия отношений','Ольга Веда','10 000р.','11 340',modals[4],links[4])
+			+course(classes[5],imgClasses[5],'Русские руны','Татьяна Тэсс','10 000р.','14 200',modals[5],links[5])
+		.row
+			+course(classes[6],imgClasses[6],'Перевернутые руны + предсказания рун (2 в 1)','Анна Скуцкая','10 000','3 200',modals[6],links[6])
+			+course(classes[7],imgClasses[7],'Несочетаемые руны','Анна Скуцкая','10 000','1 500',modals[7],links[7])
+			+course(classes[8],imgClasses[8],'Техники и технологии гадания','Владимир Вяткин','10 000','2 500',modals[8],links[8])
+		.row
+			+course(classes[9],imgClasses[9],'Дизайн человека','Анна Ролева и Вероника Юрина','10 000','9 520',modals[9],links[9], '3 400', '“Любовь и отношения в ДЧ”')
+			+course(classes[10],imgClasses[10],'Механика генных ключей','Анна Ролева и Вероника Юрина','10 000','10 920',modals[10],links[10], '4 400', '“Из теней в дары”')
+			+course(classes[11],imgClasses[11],'Монетизация','Анна Ролева и Вероника Юрина','10 000','6 720',modals[11],links[11], '5 400', '“Личный бренд”')
+		.row
+			+course(classes[12],imgClasses[12],'Работа с убеждениями','Ольга Кононенко','10 000','600',modals[12],links[12])
+			+course(classes[13],imgClasses[13],'Работа со страхами','Ольга Кононенко','10 000','600',modals[13],links[13])
+			+course(classes[14],imgClasses[14],'Работа с тенью','Ольга Кононенко','10 000','1 00',modals[14],links[14])
+		.row
+			+course(classes[15],imgClasses[15],'Ресурс тотемного животного','Ольга Кононенко','10 000','500',modals[15],links[15])
+			+course(classes[16],imgClasses[16],'Самоисполняющиеся цели','Ольга Кононенко','10 000','1 500',modals[16],links[16])
+			+course(classes[17],imgClasses[17],'Финансовая растяжка + Потоковое везение','Ольга Кононенко','10 000','800',modals[17],links[17])
+		.row
+			+course(classes[18],imgClasses[18],'Я - концепция','Ольга Кононенко','10 000','800',modals[18],links[18])
+			.col-md-8.col-sm-8
+				.course.course-20
+					.course-img(class= imgClasses[19])
+					.course-body
+						h4.course-name Мини-курсы: “Любовь и отношения в ДЧ” + “Из теней в дары” + “Силовое поле”. 
+							span 3 по цене 2
+						p.course-auhtor Анна Ролева и Вероника Юрина
+						p.price.course-full-price 10 000руб.
+						p.price.course-price 8 140
+							span руб.
+					.course-footer
+						.col-md-6.col-sm-6
+							.button.button-more
+								button(data-modal='modal-19')  Подробнее
+						.col-md-6.col-sm-6
+							.button.button-link
+								a(href= links[19] target="_blank") Купить
