@@ -1,6 +1,6 @@
 -var classes = ['course-1','course-2','course-3','course-4','course-5','course-6','course-7','course-8','course-9','course-10','course-11','course-12','course-13','course-14','course-15','course-16','course-17','course-18','course-19','course-20'];
 -var imgClasses = ['course-img-1','course-img-2','course-img-3','course-img-4','course-img-5','course-img-6','course-img-7','course-img-8','course-img-9','course-img-10','course-img-11','course-img-12','course-img-13','course-img-14','course-img-15','course-img-16','course-img-17','course-img-18','course-img-19','course-img-20'];
--var modals = ['modal-1','modal-2','modal-3','modal-4','modal-5','modal-6','modal-7','modal-8','modal-9','modal-10','modal-11','modal-12','modal-13','modal-13','modal-14','modal-15','modal-16','modal-17','modal-18','modal-19'];
+-var modals = ['#modal-1','#modal-2','#modal-3','#modal-4','#modal-5','#modal-6','#modal-7','#modal-8','#modal-9','#modal-10','#modal-11','#modal-12','#modal-13','#modal-14','#modal-15','#modal-16','#modal-17','#modal-18','#modal-19','#modal-20'];
 -var links = ['','','','','','','','','','','','','','','','','','','',''];
 
 mixin course(cl, clImg,name, author, fullPrice, price, modal, link, giftPrice, giftName)
@@ -15,13 +15,13 @@ mixin course(cl, clImg,name, author, fullPrice, price, modal, link, giftPrice, g
 						| мини-курс 
 						= giftName
 				p.course-auhtor= author
-				p.price.full-price= fullPrice
+				p.price.price-full= fullPrice
 					| <span> руб.</span>
 				p.price.price-sale=price
 					| <span> руб.</span>
 			.course-footer
-				.button.button-more
-					button(data-modal= modal)  Подробнее
+				.button.button-more(data-modal= modal)
+					button Подробнее
 				.button.button-link
 					a(href= link target="_blank") Купить
 
@@ -65,7 +65,7 @@ section#courses
 						p.price.course-price 8 140
 							span руб.
 					.course-footer.course-footer-20
-						.button.button-more
-							button(data-modal='modal-19')  Подробнее
+						.button.button-more(data-modal=modals[19])
+							button(type="submit")  Подробнее
 						.button.button-link
 							a(href= links[19] target="_blank") Купить
