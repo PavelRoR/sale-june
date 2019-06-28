@@ -1,47 +1,60 @@
-// $(document).ready(function() {
-function search(el) {
-    return document.querySelector(el);
-}
-
-function searchAll(el) {
-    return document.querySelectorAll(el);
-}
-
+let moreButtons = document.querySelectorAll('.button-more'),
+    closeButtons = document.querySelectorAll('.close'),
+    modalWrappers = document.querySelectorAll('.modal-wrapper'),
+    modalWindows = document.querySelectorAll('.modal-window'),
+    body = document.querySelector('body');
 // Показать окно
-searchAll('.button-more').forEach(function (e) {
-    e.onclick = modalShow;
-});
+
+for (let i=0;i<moreButtons.length;i++){
+    moreButtons[i].onclick = modalShow;
+}
 // Скрыть окно по кнопке X
-searchAll('.close').forEach(function (e) {
-    e.onclick = modalClose;
-});
+
+for (let i=0;i<closeButtons.length;i++){
+    closeButtons[i].onclick = modalClose;
+}
 // Скрыть окно по клике за пределами окна
-searchAll('.modal-wrapper').forEach(function (e) {
-    e.onclick = modalClose;
-})
+
+for (let i=0;i<modalWrappers.length;i++){
+    modalWrappers[i].onclick = modalClose;
+}
+
+
 // Показывает окно
 function modalShow() {
-    let modalIds = this.dataset.modal;
-    search('body').classList.add('body-scroll');
-    search(modalIds).classList.remove('hide');
+    let modalIds = this.dataset.modal,
+        modals = document.querySelector(modalIds);
+    body.classList.add('body-scroll');
+    modals.classList.remove('customHidden');
+    // modals.firstChild.classList.remove('fadeOut');
+    // modals.firstChild.classList.add('fadeIn');
     document.onkeydown = function (e) {
-        if (e.keyCode = 27) {modalClose();}
-
+        if (e.keyCode == 27) modalClose();
     }
 }
 // Скрываем окно
 function modalClose() {
-    searchAll('.modal-wrapper').forEach(function (e) {
-        search('body').classList.remove('body-scroll');
-        e.classList.add('hide');
-    })
+    for (let i=0;i<modalWrappers.length;i++){
+        // modalWrappers[i].firstChild.classList.add('fadeOut');
+        // modalWrappers[i].firstChild.classList.remove('fadeIn');
+        modalWrappers[i].classList.add('customHidden');
+        body.classList.remove('body-scroll');
+        // setTimeout(function(){
+        // },200)
+        // setTimeout(function(){
+        //     modalWrappers[i].classList.add('customHidden');
+        //     body.classList.remove('body-scroll');
+        // },200)
+    }
+
     document.onkeydown = null;
 }
-searchAll('.modal-window').forEach(function (e) {
-    e.onclick = function () {
+
+for (let i=0;i<modalWindows.length;i++) {
+    modalWindows[i].onclick = function (){
         event.stopPropagation();
     }
-})
+}
 
 var isIE = false || !!document.documentMode;
 
@@ -52,7 +65,3 @@ if (isIE) {
     link.href = "css/ie.min.css";
     head.appendChild(link);
 }
-
-
-/*Конец документа*/
-// });
